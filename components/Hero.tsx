@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import {Menu, Sparkles, X} from 'lucide-react'
+import {useState} from 'react'
+import {Dialog, DialogPanel} from '@headlessui/react'
+import {Sparkles, X} from 'lucide-react'
+import Link from "next/link";
 
 // const navigation: string[] = [
 //     { name: 'Product', href: '#' },
@@ -19,10 +20,7 @@ export default function Example() {
             <header className="absolute inset-x-0 top-0 z-50">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                     <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only"> {process.env.NEXT_PUBLIC_APP_NAME}</span>
-                            <img alt="Home" src={'/logo.png'} className="size-7 w-auto"/>
-                        </a>
+
                     </div>
                     {/*<div className="hidden lg:flex lg:gap-x-12">*/}
                     {/*    {navigation.map((item) => (*/}
@@ -49,8 +47,7 @@ export default function Example() {
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="-m-2.5 rounded-md p-2.5 text-gray-200"
-                            >
+                                className="-m-2.5 rounded-md p-2.5 text-gray-200">
                                 <span className="sr-only">Close menu</span>
                                 <X aria-hidden="true" className="size-6" />
                             </button>
@@ -83,38 +80,35 @@ export default function Example() {
             </header>
 
             <div className="relative isolate px-6 pt-14 lg:px-8">
-                <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-                >
+                <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
                 </div>
                 <div className=" mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 ">
                     <img
                         alt=""
                         src={'/logo.png'}
-                        className="size-25 object-contain mx-auto animate-fade-in-up"
+                        className="size-25 object-contain mx-auto animate-fade-in-up mb-5"
                     />
                     <div className="text-center ">
-
                         <h1 className="animate-fade-in-up [--animation-delay:500ms] text-5xl font-semibold tracking-tight text-balance text-primary sm:text-7xl">
                             AduRaket
                         </h1>
-                        <p className="animate-fade-in-up [--animation-delay:500ms] mt-8 text-lg font-medium text-pretty text-secondary sm:text-xl/8">
+                        <p className="animate-fade-in-up [--animation-delay:500ms] mt-8 text-sm font-medium text-pretty text-secondary lg:text-lg">
                             Kelola banyak peserta sesi badminton dengan lebih mudah! <br/>
                             <span className={"font-semibold"}>AduRaket</span> membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.
                         </p>
                         <div className="animate-fade-in-up [--animation-delay:1000ms] mt-10 flex items-center justify-center gap-x-6">
-                            <a
-                                href="#"
-                                className="rounded-md bg-coral px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 ">
+                            <Link href={`/matchmaking/create`}
+                                  className="rounded-md bg-coral px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 ">
                                 <div className={"inline-flex items-center gap-x-2"}>
                                     <Sparkles/>
                                     <span>Mulai Matchmaking</span>
                                 </div>
-                            </a>
-                            <a href="#" className="text-sm/6 font-semibold text-coral">
+                            </Link>
+                            
+                            
+                            <Link href={'/about'} className="text-sm/6 font-semibold text-coral">
                                 Pelajari <span aria-hidden="true">→</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
