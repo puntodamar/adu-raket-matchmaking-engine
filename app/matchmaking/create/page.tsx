@@ -2,6 +2,7 @@ import {Field, FieldLabel,} from "@/components/ui/field";
 import {Input} from "@/components/ui/input"
 import {Sparkles} from "lucide-react";
 import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
 export default function CreateMatchmaking() {
     return (
@@ -25,10 +26,13 @@ export default function CreateMatchmaking() {
                         placeholder="PB. Berbagi Senyum"
                     />
                 </Field>
-                
                 <Button className={"hover:cursor-pointer mt-2 bg-coral"}>
-                    <Sparkles data-icon="inline-start" /> Mulai
+                    <Link href="/matchmaking/example" className={"w-full flex flex-row gap-x-2 items-center justify-center"}>
+                        <Sparkles data-icon="inline-start" /> Mulai
+                    </Link>
+
                 </Button>
+
             </div>
         </div>
     
