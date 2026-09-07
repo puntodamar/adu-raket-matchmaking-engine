@@ -1,8 +1,10 @@
+
 import type {Metadata} from "next";
 import {Geist, Inter, Sora} from "next/font/google";
 import "./globals.css";
 import {cn} from "@/lib/utils";
-import Link from "next/link";
+import Header from "@/components/Header";
+import Container from "@/components/ui/Container";
 
 const geist = Geist({subsets: ['latin'], variable: '--font-sans'});
 
@@ -21,23 +23,22 @@ export const metadata: Metadata = {
     description: "Kelola banyak peserta sesi badminton dengan lebih mudah! AduRaket membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.\n",
 };
 
-export default function RootLayout({children}: LayoutProps<"/">) {
+export default function RootLayout({children}) {
     return (
         <html lang="en"
             className={cn("h-full", "antialiased", "court-bg", inter.variable, sora.variable, "font-sans", geist.variable)}>
             <body className="relative court-bg min-h-screen flex flex-col">
-            <Link href="/" className="-m-1.5 p-1.5 absolute top-4 left-4">
-                <span className="sr-only"> {process.env.NEXT_PUBLIC_APP_NAME}</span>
-                <img alt="Home" src={'/logo.png'} className="size-7 w-auto"/>
-            </Link>
-            <main className="flex flex-1 flex-col">
-                {children}
-            </main>
-            
-            <footer className="mx-auto mb-1 text-xs text-primary">
-                Created By:{" "}
-                <a href="https://puntodamar.vercel.app/" target="_blank" className="text-coral">Punto Damar P.</a>
-            </footer>
+                <Header/>
+                <main className="flex flex-1 py-5">
+                    <Container className="flex flex-1 flex-col">
+                        {children}
+                    </Container>
+                </main>
+                
+                <footer className="mx-auto mb-1 text-xs text-primary">
+                    Created By:{" "}
+                    <a href="https://puntodamar.vercel.app/" target="_blank" className="text-coral font-bold">Punto Damar P.</a>
+                </footer>
             </body>
         
         </html>

@@ -2,8 +2,9 @@
 
 import {useState} from 'react'
 import {Dialog, DialogPanel} from '@headlessui/react'
-import {Sparkles, X} from 'lucide-react'
+import {Sparkles, Swords, X} from 'lucide-react'
 import Link from "next/link";
+import {Button} from "@/components/ui/button";
 
 // const navigation: string[] = [
 //     { name: 'Product', href: '#' },
@@ -89,26 +90,22 @@ export default function Example() {
                         className="size-25 object-contain mx-auto animate-fade-in-up mb-5"
                     />
                     <div className="text-center ">
-                        <h1 className="animate-fade-in-up [--animation-delay:500ms] text-5xl font-semibold tracking-tight text-balance text-primary sm:text-7xl">
+                        <h1 className="animate-fade-in-up [--animation-delay:500ms] text-5xl font-semibold tracking-tight text-balance text-coral sm:text-7xl">
                             AduRaket
                         </h1>
-                        <p className="animate-fade-in-up [--animation-delay:500ms] mt-8 text-sm font-medium text-pretty text-secondary lg:text-lg">
+                        <p className="animate-fade-in-up [--animation-delay:500ms] mt-8 text-sm font-medium text-pretty text-gray-900  lg:text-lg">
                             Kelola banyak peserta sesi badminton dengan lebih mudah! <br/>
-                            <span className={"font-semibold"}>AduRaket</span> membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.
+                            <span className={"font-semibold text-coral"}>AduRaket</span> membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.
                         </p>
                         <div className="animate-fade-in-up [--animation-delay:1000ms] mt-10 flex items-center justify-center gap-x-6">
                             <Link href={`/matchmaking/create`}
-                                  className="rounded-md bg-coral px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 ">
+                                  className="rounded-md bg-primary hover:bg-accent px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 ">
                                 <div className={"inline-flex items-center gap-x-2"}>
-                                    <Sparkles/>
+                                    <Swords size={16} />
                                     <span>Mulai Matchmaking</span>
                                 </div>
                             </Link>
                             
-                            
-                            <Link href={'/about'} className="text-sm/6 font-semibold text-coral">
-                                Pelajari <span aria-hidden="true">→</span>
-                            </Link>
                         </div>
                     </div>
                 </div>
