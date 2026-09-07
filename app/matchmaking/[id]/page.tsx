@@ -5,6 +5,7 @@ import {useSessionStore} from "@/src/store/useSessionStore";
 import Heading from "@/components/Heading";
 import {Button} from "@base-ui/react";
 import {FileClock, Logs, Sparkles, Swords, UserRoundPlus} from "lucide-react";
+import Link from "next/link";
 
 export default function MatchmakingSession() {
     let currentSession = useSessionStore((state) => state.currentSession);
@@ -20,9 +21,12 @@ export default function MatchmakingSession() {
             
             <div className="flex flex-1 flex-col items-center justify-center">
                 <Heading>{currentSession.name}</Heading>
+                
                 <div className="flex flex-col gap-y-2 mt-10">
                     <Button className={buttonClass}>
-                        <UserRoundPlus data-icon="inline-start" size={16} /> Tambah Pemain
+                        <Link href={`/matchmaking/${currentSession.uuid}/player`} >
+                            <UserRoundPlus data-icon="inline-start" size={16} /> Tambah Pemain
+                        </Link>
                     </Button>
                     
                     <Button className={buttonClass}>
