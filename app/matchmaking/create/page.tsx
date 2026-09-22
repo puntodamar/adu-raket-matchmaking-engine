@@ -11,7 +11,7 @@ import Heading from "@/components/Heading";
 
 
 
-export default function CreateMatchmaking() {
+export default function CreateMatchmakingPage() {
     
     const router = useRouter();
     const createSession = useSessionStore((state) => state.createSession);

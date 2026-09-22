@@ -11,7 +11,7 @@ export default function MatchmakingSession() {
     let currentSession = useSessionStore((state) => state.currentSession);
     const createSession = useSessionStore((state) => state.createSession)
     
-    const buttonClass = "hover:cursor-pointer hover:bg-accent mt-2 bg-primary w-full flex flex-row gap-x-2 items-center justify-center p-2 rounded-lg text-white text-sm"
+    const buttonClass = "hover:cursor-pointer hover:bg-accent bg-primary w-full flex flex-row gap-x-2 items-center justify-center p-2 rounded-lg text-white text-sm"
     if(!currentSession) {
         currentSession = createSession({name: "PB. Goodminton"})
     }
@@ -19,7 +19,7 @@ export default function MatchmakingSession() {
     return (
         <div className="flex flex-1 flex-col">
             
-            <div className="flex flex-1 flex-col items-center justify-center">
+            <div className="flex flex-1 flex-col items-center justify-center max-w-md mx-auto">
                 <Heading>{currentSession.name}</Heading>
                 
                 <div className="flex flex-col gap-y-2 mt-10">
@@ -41,14 +41,14 @@ export default function MatchmakingSession() {
                         </span>
                     </Link>
                     
-                    <Button className={buttonClass}>
+                    <Link href={`/matchmaking/${currentSession.uuid}/history`} className={buttonClass}>
                         <span className="inline-flex items-center gap-x-2">
                             <span className="inline-flex items-center">
                                 <FileClock data-icon="inline-start" size={16} />
                             </span>
                             <span>History</span>
                         </span>
-                    </Button>
+                    </Link>
                     
                     <Button className={`${buttonClass} bg-secondary hover:bg-accent`}>
                         <span className="inline-flex items-center gap-x-2">
