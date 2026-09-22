@@ -24,21 +24,39 @@ export default function MatchmakingSession() {
                 
                 <div className="flex flex-col gap-y-2 mt-10">
                     <Button className={buttonClass}>
-                        <Link href={`/matchmaking/${currentSession.uuid}/player`} >
-                            <UserRoundPlus data-icon="inline-start" size={16} /> Tambah Pemain
+                        <Link href={`/matchmaking/${currentSession.uuid}/player`} className="inline-flex items-center gap-x-2">
+                            <span className="inline-flex items-center">
+                                <UserRoundPlus data-icon="inline-start" size={16} />
+                            </span>
+                            <span>Tambah Pemain</span>
                         </Link>
                     </Button>
                     
                     <Button className={buttonClass}>
-                        <Logs data-icon="inline-start" size={16} /> Daftar Pemain
+                        <span className="inline-flex items-center gap-x-2">
+                            <span className="inline-flex items-center">
+                                <Logs data-icon="inline-start" size={16} />
+                            </span>
+                            <span>Daftar Pemain</span>
+                        </span>
                     </Button>
                     
                     <Button className={buttonClass}>
-                        <FileClock data-icon="inline-start" size={16}  /> History
+                        <span className="inline-flex items-center gap-x-2">
+                            <span className="inline-flex items-center">
+                                <FileClock data-icon="inline-start" size={16} />
+                            </span>
+                            <span>History</span>
+                        </span>
                     </Button>
                     
                     <Button className={`${buttonClass} bg-secondary hover:bg-accent`}>
-                        <Swords data-icon="inline-start" size={16}  /> Buat Matchmaking
+                        <span className="inline-flex items-center gap-x-2">
+                            <span className="inline-flex items-center">
+                                <Swords data-icon="inline-start" size={16} />
+                            </span>
+                            <span>Buat Matchmaking</span>
+                        </span>
                     </Button>
                     
 
