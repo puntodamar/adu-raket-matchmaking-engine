@@ -1,4 +1,3 @@
-
 'use client';
 
 import Heading from "@/components/Heading";
@@ -23,6 +22,14 @@ export default function CreatePlayer() {
     
     const [playerName, setPlayerName] = useState('');
     const [playerLevel, setPlayerLevel] = useState<SkillLevel>('Pemula');
+    const fruits = [
+        { value: "1", label: "Pemula" },
+        { value: "2", label: "Pra-Menengah" },
+        { value: "3", label: "Menengah" },
+        { value: "4", label: "Menegah-Atas" },
+        { value: "5", label: "Pro" },
+    ];
+    const [selectedFruit, setSelectedFruit] = useState<string | null>("banana");
     const handleSubmit = () => {
     
     }
@@ -50,8 +57,6 @@ export default function CreatePlayer() {
                         />
                     </Field>
                     
-
-                    
                     <Field className="mx-auto flex w-full flex-col gap-y-1">
                         <FieldLabel
                             htmlFor="select-player-level"
@@ -60,18 +65,24 @@ export default function CreatePlayer() {
                         </FieldLabel>
                         
                         <div className="relative w-full">
-                            <Select defaultValue="banana">
-                                <SelectTrigger className="w-full cursor-pointer bg-white">
-                                    <SelectValue placeholder="Pilih buah" />
+                            <Select value={selectedFruit} onValueChange={setSelectedFruit}>
+                                {/* Added text-center and w-full to the trigger */}
+                                <SelectTrigger className="w-full cursor-pointer bg-white justify-center text-center" showIcon={false}>
+                                    <SelectValue  className="w-full text-center" >
+                                        {fruits.find((fruit) => fruit.value === selectedFruit)?.label}
+                                    </SelectValue>
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
-                                        
-                                        <SelectItem value="apple" className={"text-xs text-gray-500 font-medium"}>Apple</SelectItem>
-                                        <SelectItem value="banana">Banana</SelectItem>
-                                        <SelectItem value="blueberry">Blueberry</SelectItem>
-                                        <SelectItem value="grapes">Grapes</SelectItem>
-                                        <SelectItem value="pineapple">Pineapple</SelectItem>
+                                        {fruits.map((fruit) => (
+                                            <SelectItem
+                                                key={fruit.value}
+                                                value={fruit.value}
+                                                className="text-xs font-medium hover:bg-accent/50 hover:text-white data-[highlighted]:bg-accent/50 data-[highlighted]:text-white"
+                                            >
+                                                {fruit.label}
+                                            </SelectItem>
+                                        ))}
                                     </SelectGroup>
                                 </SelectContent>
                             </Select>
