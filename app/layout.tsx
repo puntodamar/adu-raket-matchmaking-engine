@@ -35,7 +35,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                     </Container>
                 </main>
                 
-                <footer className="mx-auto mb-1 text-xs text-primary">
+                <footer className="mx-auto mb-1 text-xs text-primary text-[8px]">
                     Created By:{" "}
                     <a href="https://puntodamar.vercel.app/" target="_blank" className="text-coral font-bold">Punto Damar P.</a>
                 </footer>

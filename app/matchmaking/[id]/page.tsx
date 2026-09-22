@@ -32,14 +32,14 @@ export default function MatchmakingSession() {
                         </Link>
                     </Button>
                     
-                    <Button className={buttonClass}>
+                    <Link href={`/matchmaking/${currentSession.uuid}/list`} className={buttonClass}>
                         <span className="inline-flex items-center gap-x-2">
                             <span className="inline-flex items-center">
                                 <Logs data-icon="inline-start" size={16} />
                             </span>
-                            <span>Daftar Pemain</span>
+                            <span>Presensi</span>
                         </span>
-                    </Button>
+                    </Link>
                     
                     <Button className={buttonClass}>
                         <span className="inline-flex items-center gap-x-2">
