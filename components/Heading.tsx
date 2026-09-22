@@ -9,10 +9,13 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 export default function Heading({children, as = 'h1', className, ...props}: HeadingProps) {
     const Tag: React.ElementType = as;
-
+    
     return (
         <Tag
-            className={cn("text-heading text-center text-coral text-2xl font-bold", className)}
+            className={cn(
+                "text-heading text-center text-coral text-2xl font-bold border-b-2 border-coral pb-2 mb-4",
+                className
+            )}
             {...props}
         >
             {children}

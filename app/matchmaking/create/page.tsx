@@ -51,7 +51,7 @@ export default function CreateMatchmaking() {
                         {/*    <Sparkles data-icon="inline-start" /> Mulai*/}
                         {/*</Link>*/}
                         
-                        <Sparkles data-icon="inline-start" /> Mulai
+                        <Sparkles data-icon="inline-start" size={10} /> <span className="text-xs">Mulai</span>
                     
                     </Button>
                 </form>

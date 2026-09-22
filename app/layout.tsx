@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Kelola banyak peserta sesi badminton dengan lebih mudah! AduRaket membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.\n",
 };
 
-export default function RootLayout({children}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
         <html lang="en"
             className={cn("h-full", "antialiased", "court-bg", inter.variable, sora.variable, "font-sans", geist.variable)}>
