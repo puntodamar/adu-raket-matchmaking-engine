@@ -3,7 +3,7 @@
 import Heading from "@/components/Heading";
 import { Field, FieldLabel } from "@/components/ui/field";
 import React, { useState } from "react";
-import { SKILL_LEVELS, SkillLevel, useSessionStore } from "@/src/store/useSessionStore";
+import {Player, SKILL_LEVELS, SkillLevel, useSessionStore} from "@/src/store/useSessionStore";
 import { Input } from "@/components/ui/input";
 import {
     Select,
@@ -14,18 +14,31 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { UserRoundPlus } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+
+import BackButton from "@/components/ui/buttons/back";
+import DefaultButton from "@/components/ui/buttons/default";
+import {useRouter} from "next/navigation";
 
 export default function CreatePlayer() {
     let currentSession = useSessionStore((state) => state.currentSession);
-    const buttonClass = "hover:cursor-pointer hover:bg-accent flex flex-row gap-x-2 items-center justify-center p-2 rounded-lg bg-coral text-white text-sm hover:text-white";
-
-    const router = useRouter();
     const [playerName, setPlayerName] = useState('');
     const [playerLevel, setPlayerLevel] = useState<SkillLevel>('Pemula');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (currentSession) {
+            // Construct the new player matching your Player interface
+            const newPlayer: Player = {
+                id: crypto.randomUUID(),
+                name: playerName,
+                level: Number(playerLevel),
+                matchPlayed: 0,
+            };
+
+            useSessionStore.getState().addPlayer(newPlayer);
+            router.back();
+        }
     }
 
     return (
