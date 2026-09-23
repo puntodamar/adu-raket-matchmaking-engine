@@ -9,7 +9,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function RegisterPage() {
+export default function
+    RegisterPage() {
     const router = useRouter();
     
     // Grouped state for all inputs

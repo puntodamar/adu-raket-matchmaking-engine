@@ -13,7 +13,7 @@ export default function Heading({children, as = 'h1', className, ...props}: Head
     return (
         <Tag
             className={cn(
-                "text-heading text-center text-coral text-2xl font-bold border-b-2 border-coral pb-2 mb-4",
+                "text-heading text-center text-coral text-xl md:text-2xl font-bold border-b-2 border-coral pb-2 mb-4",
                 className
             )}
             {...props}

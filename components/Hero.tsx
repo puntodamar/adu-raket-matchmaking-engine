@@ -20,11 +20,11 @@ export default function Hero() {
                     />
                     <div>
                         <h1 className="animate-fade-in-up [--animation-delay:500ms] text-5xl font-semibold tracking-tight text-balance text-coral sm:text-7xl">
-                            AduRaket
+                            {process.env.NEXT_PUBLIC_APP_NAME}
                         </h1>
                         <p className="animate-fade-in-up [--animation-delay:500ms] mt-8 text-sm font-medium text-pretty text-gray-900 lg:text-lg">
                             Kelola banyak peserta sesi badminton dengan lebih mudah! <br/>
-                            <span className={"font-semibold text-coral"}>AduRaket</span> membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.
+                            <span className={"font-semibold text-coral"}>{process.env.NEXT_PUBLIC_APP_NAME}</span> membantu host menyusun matchup yang seimbang, cepat, dan praktis untuk setiap sesi permainan.
                         </p>
                         <div className="animate-fade-in-up [--animation-delay:1000ms] mt-10 flex items-center justify-center gap-x-6">
                             <Link href={`/matchmaking/create`}
