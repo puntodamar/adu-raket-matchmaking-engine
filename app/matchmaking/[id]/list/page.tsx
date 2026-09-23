@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useSessionStore } from "@/src/store/useSessionStore";
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import BackButton from "@/components/ui/buttons/back";
 
 export default function PlayerListPage() {
     const router = useRouter();
@@ -68,11 +69,7 @@ export default function PlayerListPage() {
                     </ScrollArea>
                 </div>
 
-                <Button onClick={() => router.back()} className={cn(buttonClass, "mt-4")}>
-                    <span className="inline-flex items-center gap-x-2">
-                        <span>Kembali</span>
-                    </span>
-                </Button>
+                <BackButton fullWidth={true} className={"mt-2"}/>
             </div>
         </div>
     )

@@ -80,15 +80,11 @@ export default function CreatePlayer() {
                         </div>
                     </Field>
 
-                    <div className="flex flex-row items-stretch gap-x-2 pt-3 mt-3 border-t border-coral/50">
-                        <Button type="button" onClick={() => router.back()} className={buttonClass} variant="outline">
-                            <span className="inline-flex items-center gap-x-2">
-                                <span>Kembali</span>
-                            </span>
-                        </Button>
-                        <Button type="submit" className="flex-1 hover:cursor-pointer hover:bg-accent bg-primary flex flex-row gap-x-2 items-center justify-center p-2 rounded-lg text-white text-sm">
+                    <div className="flex flex-row items-center gap-x-2 pt-3 mt-3 border-t border-coral/50">
+                        <BackButton />
+                        <DefaultButton color={"bg-coral"}>
                             <UserRoundPlus data-icon="inline-start" size={16} /> Tambah
-                        </Button>
+                        </DefaultButton>
                     </div>
                 </form>
             </div>
